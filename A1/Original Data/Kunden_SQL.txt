@@ -1,0 +1,16 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1031{\fonttbl{\f0\fswiss\fcharset0 Arial;}}
+{\*\generator Msftedit 5.41.15.1515;}\viewkind4\uc1\pard\f0\fs20 insert into kunden values(10,'Klaus','Mustermann','Berliner Tor 7',20099,'Hamburg');\par
+insert into kunden values(11,'Anke','Kraft','Berliner Tor 5',20099,'Hamburg');\par
+insert into kunden values(12,'Olaf','Meier','Bremer Landstra\'dfe',21680,'Stade');\par
+insert into kunden values(13,'Jakob','Schmidt','Berner Heerweg 13',20098,'Hamburg');\par
+insert into kunden values(14,'Elke','Bremer','Berliner Tor 21',20099,'Hamburg');\par
+insert into kunden values(15,'Klaus','Kunstmann','Berliner Tor 11',20099,'Hamburg');\par
+insert into kunden values(16,'Julia','Jürgens','Stadtbrücke 7',21680,'Stade');\par
+insert into kunden values(17,'Andreas','Schmitt','Berstrasse 7a',21680,'Stade');\par
+insert into kunden values(18,'Andreas','Bremer','Holtenauer Allee 4',24123,'Kiel');\par
+insert into kunden values(19,'Klaus','Abraham','Schloss 56',24123,'Kiel');\par
+insert into kunden values(20,'Katharina','Klein','Laboer Landweg 145',24123,'Kiel');\par
+\par
+\par
+}
+ 

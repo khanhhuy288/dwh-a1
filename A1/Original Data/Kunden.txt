@@ -1,0 +1,12 @@
+Kundennummer, Vorname, Name, Strasse, PLZ, Ort
+10,Klaus,Mustermann,Berliner Tor 7,20099,Hamburg
+11,Anke,Kraft,Berliner Tor 5,20099,Hamburg
+12,Olaf,Meier,Bremer Rosenallee,21680,Stade
+13,Jakob,Schmidt,Berner Heerweg 13,20098,Hamburg
+14,Elke,Bremer,Berliner Tor 21,20099,Hamburg
+15,Klaus,Kunstmann,Berliner Tor 11,20099,Hamburg
+16,Julia,Jakobsen,Stadthaus 7,21680,Stade
+17,Andreas,Schmitt,Bergstrasse 7a,21680,Stade
+18,Andreas,Bremer,Holtenauer Allee 4,24123,Kiel
+19,Klaus,Abraham,Schloss 56,24123,Kiel
+20,Katharina,Klein,Laboer Landweg 145,24123,Kiel 
