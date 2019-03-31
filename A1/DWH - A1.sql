@@ -55,6 +55,9 @@ CREATE TABLE dim_datum (
     dim_datum_key integer generated always as identity,
     
     datum date,
+    datum_tag number(2, 0),
+    datum_monat number(2, 0),
+    datum_jahr number(4, 0),
     
     constraint dim_datum_pk primary key(dim_datum_key)
 )
@@ -142,8 +145,9 @@ set kundennummer = null
 where kundennummer not in (select distinct kundennummer from dim_kunde);
 
 -- populate dim_datum
-insert into dim_datum (datum)
-select distinct datum from temp_bestellung;
+insert into dim_datum (datum, datum_tag, datum_monat, datum_jahr)
+select distinct datum, extract(day FROM datum), extract(month FROM datum), extract(year FROM datum) 
+from temp_bestellung;
 
 -- populate fact_bestellung
 insert into fact_bestellung(dim_kunde_key, dim_verkaeufer_key, dim_artikel_key, dim_artgrp_key, dim_datum_key, anzahl, preis)
@@ -154,6 +158,18 @@ left join dim_artikel using(artnr)
 left join dim_artgrp using(artgrp)
 left join dim_datum using(datum)
 left join dim_kunde using(kundennummer);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
