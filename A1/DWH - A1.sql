@@ -174,7 +174,7 @@ group by (filiale_name, datum_monat)
 order by filiale_name, datum_monat;
 
 -- 2. Umsatz pro Filiale und Monat (group by cube)
-select filiale_name, datum_monat, sum(anzahl * preis) as umsatz from fact_bestellung
+select nvl(filiale_name,' '), datum_monat, sum(anzahl * preis) as umsatz from fact_bestellung
 right join dim_verkaeufer using(dim_verkaeufer_key)
 right join dim_datum using(dim_datum_key)
 group by cube(filiale_name, datum_monat)
@@ -188,7 +188,8 @@ right join dim_artikel using(dim_artikel_key)
 where artname = 'Handcreme'
 and datum between to_date('01.09.2012', 'DD.MM.YYYY') and to_date('03.09.2012', 'DD.MM.YYYY')
 group by(filiale_name)
-order by filiale_name;
+order by filiale_name
+fetch first row only;
 
 -- 4. Umsatz pro Artikelgruppe
 select artgrp, sum(anzahl * preis) as umsatz from fact_bestellung
@@ -206,17 +207,17 @@ order by filiale_name, artgrp;
 -- filter artgrp = 'K'
 
 -- 6. Umsatz pro Kunden
-select kundennummer, sum(anzahl * preis) as umsatz from fact_bestellung
+select kundennummer, nvl(sum(anzahl * preis), 0) as umsatz from fact_bestellung
 full outer join dim_kunde using(dim_kunde_key)
 group by (kundennummer)
 order by kundennummer;
 
 -- 7. Buchungen pro Verkäufer und Tag.
-select kundennummer, datum, sum(anzahl * preis) as beitrag from fact_bestellung
-left join dim_kunde using(dim_kunde_key)
+select verkaeufer_vorname, datum, sum(anzahl * preis) as beitrag from fact_bestellung
+left join dim_verkaeufer using(dim_verkaeufer_key)
 right join dim_datum using(dim_datum_key)
-group by (kundennummer, datum)
-order by kundennummer, datum;
+group by (verkaeufer_vorname, datum)
+order by verkaeufer_vorname, datum;
 
 
 
