@@ -10,6 +10,7 @@ drop table dim_date;
 -- create Kunde dimension 
 create table dim_kunde (
     dim_kunde_key integer generated always as identity, 
+    
     kundennummer integer,
     vorname varchar2(50 char), 
     nachname varchar2(50 char), 
@@ -23,6 +24,7 @@ create table dim_kunde (
 -- create Verkaeufer dimension 
 create table dim_verkaeufer (
     dim_verkaeufer_key integer generated always as identity, 
+    
     verkaeufer_vorname varchar2(50 char),
     filiale_name varchar2 (50 char),
     geburtstag date,
@@ -34,6 +36,7 @@ create table dim_verkaeufer (
 -- create Artikel dimension 
 create table dim_artikel (
     dim_artikel_key integer generated always as identity, 
+    
     artnr integer, 
     artname varchar2 (100 char), 
     artgrp varchar2 (10 char),
@@ -44,6 +47,7 @@ create table dim_artikel (
 -- create Artikelgruppe dimention 
 create table dim_artgrp (
     dim_artgrp_key integer generated always as identity, 
+    
     artgrp varchar2(10 char), 
     grpname varchar2(50 char),
     
@@ -64,14 +68,14 @@ CREATE TABLE dim_datum (
 
 -- create Bestellung fact table 
 create table fact_bestellung (
-    anzahl integer, 
-    preis number(6, 2), 
-    
     dim_kunde_key integer, 
     dim_verkaeufer_key integer not null, 
     dim_artikel_key integer not null, 
     dim_artgrp_key integer not null, 
     dim_datum_key integer not null,
+    
+    anzahl integer, 
+    preis number(6, 2), 
     
     constraint dim_kunde_fk foreign key(dim_kunde_key) references dim_kunde(dim_kunde_key),
     constraint dim_verkaeufer_fk foreign key(dim_verkaeufer_key) references dim_verkaeufer(dim_verkaeufer_key),
@@ -159,13 +163,58 @@ left join dim_artgrp using(artgrp)
 left join dim_datum using(datum)
 left join dim_kunde using(kundennummer);
 
+-- SQL-queries 
+-- 1. Umsatz pro Filiale und Monat (group by)
+select filiale_name, datum_monat, sum(anzahl * preis) as umsatz from fact_bestellung
+right join dim_verkaeufer using(dim_verkaeufer_key)
+right join dim_datum using(dim_datum_key)
+group by (filiale_name, datum_monat)
+order by filiale_name, datum_monat;
 
+-- 2. Umsatz pro Filiale und Monat (group by cube)
+select filiale_name, datum_monat, sum(anzahl * preis) as umsatz from fact_bestellung
+right join dim_verkaeufer using(dim_verkaeufer_key)
+right join dim_datum using(dim_datum_key)
+group by cube(filiale_name, datum_monat)
+order by filiale_name, datum_monat;
 
+-- 3. Welche Filiale hat vom 1.9. – 3.9.2012 die höchste Anzahl von Handcremes verkauft?
+select filiale_name, sum(anzahl) as anzahl from fact_bestellung
+right join dim_verkaeufer using(dim_verkaeufer_key)
+right join dim_datum using(dim_datum_key)
+right join dim_artikel using(dim_artikel_key)
+where artname = 'Handcreme'
+and datum between to_date('01.09.2012', 'DD.MM.YYYY') and to_date('03.09.2012', 'DD.MM.YYYY')
+group by(filiale_name)
+order by filiale_name;
 
+-- 4. Umsatz pro Artikelgruppe
+select artgrp, sum(anzahl * preis) as umsatz from fact_bestellung
+right join dim_artgrp using(dim_artgrp_key)
+group by(artgrp)
+order by umsatz;
 
+-- 5. Prozentualer Absatz der Artikelgruppe Körperpflege in den einzelnen Filialen
+select filiale_name, artgrp, 
+round(sum(anzahl)/ cast(sum(sum(anzahl)) over (partition by filiale_name) as float), 3) as prozentualer_absatz from fact_bestellung
+right join dim_verkaeufer using(dim_verkaeufer_key) 
+right join dim_artgrp using(dim_artgrp_key)
+group by(filiale_name, artgrp)
+order by filiale_name, artgrp;
+-- filter artgrp = 'K'
 
+-- 6. Umsatz pro Kunden
+select kundennummer, sum(anzahl * preis) as umsatz from fact_bestellung
+full outer join dim_kunde using(dim_kunde_key)
+group by(kundennummer)
+order by kundennummer;
 
-
+-- 7. Buchungen pro Verkäufer und Tag.
+select kundennummer, datum, sum(anzahl * preis) as beitrag from fact_bestellung
+full outer join dim_kunde using(dim_kunde_key)
+right join dim_datum using(dim_datum_key)
+group by rollup(kundennummer, datum)
+order by kundennummer, datum;
 
 
 
