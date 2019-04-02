@@ -148,6 +148,8 @@ update temp_bestellung
 set kundennummer = null
 where kundennummer not in (select distinct kundennummer from dim_kunde);
 
+-- replace unusual year 2112 with 2012 
+
 -- populate dim_datum
 insert into dim_datum (datum, datum_tag, datum_monat, datum_jahr)
 select distinct datum, extract(day FROM datum), extract(month FROM datum), extract(year FROM datum) 
@@ -206,14 +208,14 @@ order by filiale_name, artgrp;
 -- 6. Umsatz pro Kunden
 select kundennummer, sum(anzahl * preis) as umsatz from fact_bestellung
 full outer join dim_kunde using(dim_kunde_key)
-group by(kundennummer)
+group by (kundennummer)
 order by kundennummer;
 
 -- 7. Buchungen pro Verkäufer und Tag.
 select kundennummer, datum, sum(anzahl * preis) as beitrag from fact_bestellung
-full outer join dim_kunde using(dim_kunde_key)
+left join dim_kunde using(dim_kunde_key)
 right join dim_datum using(dim_datum_key)
-group by rollup(kundennummer, datum)
+group by (kundennummer, datum)
 order by kundennummer, datum;
 
 
