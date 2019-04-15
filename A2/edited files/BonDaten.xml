@@ -1,43 +1,44 @@
-<!--Tomcat/webapps/jpivot/WEB-INF/queries/BonDaten.xml-->
 <?xml version="1.0"?> 
+<!--Tomcat/webapps/jpivot/WEB-INF/queries/BonDaten.xml-->
 <Schema name="BonDaten"> 
-<Cube name="BonDaten"> 
-	<Table name="FACT_BESTELLUNG"/> 
+	<Cube name="BonDaten"> 
+		<Table name="FACT_BESTELLUNG"/> 
 
-	<Dimension name="Datum" foreignKey="DIM_DATUM_KEY"> 
-		<Hierarchy hasAll="true" allMemberName="Alle Tage" primaryKey="DIM_DATUM_KEY"> 
-			<Table name="DIM_DATUM"/> 
-			<Level name="Jahr" column="DATUM_JAHR" formatString="####" uniqueMembers="true" /> 
-			<Level name="Monat" column="DATUM_MONAT" formatString="##" uniqueMembers="false" /> 
-			<Level name="Tag" column="DATUM_TAG" formatString="##" uniqueMembers="false" /> 
-		</Hierarchy> 
-	</Dimension> 
+		<Dimension name="Datum" foreignKey="DIM_DATUM_KEY"> 
+			<Hierarchy hasAll="true" allMemberName="Alle Tage" primaryKey="DIM_DATUM_KEY"> 
+				<Table name="DIM_DATUM"/> 
+				<Level name="Jahr" column="DATUM_JAHR" formatString="####" uniqueMembers="false" /> 
+				<Level name="Monat" column="DATUM_MONAT" formatString="##" uniqueMembers="false" /> 
+				<Level name="Tag" column="DATUM_TAG" formatString="##" uniqueMembers="false" />
+				<Level name="Datum" column="DATUM" uniqueMembers="true" /> 
+			</Hierarchy> 
+		</Dimension> 
 
-	<Dimension name="Artikel" foreignKey="DIM_ARTIKEL_KEY"> 
-		<Hierarchy hasAll="true" allMemberName="Alle Artikel" primaryKey="DIM_ARTIKEL_KEY"> 
-			<Table name="DIM_ARTIKEL"/> 
-			<Level name="Artikelgruppe" column="ARTGRP" uniqueMembers="false" />
-			<Level name="Artikel" column="ARTNAME" uniqueMembers="true" /> 
-		</Hierarchy> 
-	</Dimension> 
+		<Dimension name="Artikel" foreignKey="DIM_ARTIKEL_KEY"> 
+			<Hierarchy hasAll="true" allMemberName="Alle Artikel" primaryKey="DIM_ARTIKEL_KEY"> 
+				<Table name="DIM_ARTIKEL"/> 
+				<Level name="Artikelgruppe" column="ARTGRP" uniqueMembers="false" />
+				<Level name="Artikel" column="ARTNAME" uniqueMembers="true" /> 
+			</Hierarchy> 
+		</Dimension> 
 
-	<Dimension name="Kunden" foreignKey="DIM_KUNDE_KEY"> 
-		<Hierarchy hasAll="true" allMemberName="Alle Kunden" primaryKey="DIM_KUNDE_KEY"> 
-			<Table name="DIM_KUNDE"/> 
-			<Level name="Kundennummer" column="KUNDENNUMMER" uniqueMembers="true" /> 
-		</Hierarchy> 
-	</Dimension> 
+		<Dimension name="Kunden" foreignKey="DIM_KUNDE_KEY"> 
+			<Hierarchy hasAll="true" allMemberName="Alle Kunden" primaryKey="DIM_KUNDE_KEY"> 
+				<Table name="DIM_KUNDE"/> 
+				<Level name="Kundennummer" column="KUNDENNUMMER" uniqueMembers="true" /> 
+			</Hierarchy> 
+		</Dimension> 
 
-	<Dimension name="Verkaeufer" foreignKey="DIM_VERKAEUFER_KEY"> 
-		<Hierarchy hasAll="true" allMemberName="Alle Kunden" primaryKey="DIM_VERKAEUFER_KEY"> 
-			<Table name="DIM_VERKAEUFER"/> 
-			<Level name="Filiale" column="FILIALE_NAME" uniqueMembers="false" /> 
-			<Level name="Verkaeufer" column="VERKAEUFER_VORNAME" uniqueMembers="true" />
-		</Hierarchy> 
-	</Dimension> 
+		<Dimension name="Verkaeufer" foreignKey="DIM_VERKAEUFER_KEY"> 
+			<Hierarchy hasAll="true" allMemberName="Alle Kunden" primaryKey="DIM_VERKAEUFER_KEY"> 
+				<Table name="DIM_VERKAEUFER"/> 
+				<Level name="Filiale" column="FILIALE_NAME" uniqueMembers="false" /> 
+				<Level name="Verkaeufer" column="VERKAEUFER_VORNAME" uniqueMembers="true" />
+			</Hierarchy> 
+		</Dimension> 
 
-	<Measure name="Preis" column="PREIS" aggregator="avg" formatString="#.###"/> 
+		<Measure name="Preis" column="PREIS" aggregator="avg" formatString="#.###"/> 
 
-	<Measure name="Absatz" column="ANZAHL" aggregator="sum" formatString="####"/> 
-</Cube> 
+		<Measure name="Absatz" column="ANZAHL" aggregator="sum" formatString="####"/> 
+	</Cube> 
 </Schema>
