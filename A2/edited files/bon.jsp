@@ -12,7 +12,7 @@
 	catalogUri="file:///Users/tripham/Tomcat/webapps/jpivot/WEB-INF/queries/BonDaten.xml"> 
 
 	select {[Measures].[Preis], [Measures].[Absatz]} on columns, 	
-	{([Datum].[Alle Tage], [Artikel].[Alle Artikel], [Filiale].[B])} on rows 
+	{([Datum].[Alle Tage], [Artikel].[Alle Artikel], [Filiale].[A])} on rows 
 	from [BonDaten]	
 </jp:mondrianQuery> 
 
