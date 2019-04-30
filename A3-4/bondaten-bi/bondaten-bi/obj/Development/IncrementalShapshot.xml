@@ -1,0 +1,89 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>ach018</Database>
+    <Server>52-infmsql</Server>
+    <ConnectionString>DataSource=52-infmsql;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>xeYI7DDRyUGhrpmrdfL6dtN5b9g=30.04.2019 12:25:0830.04.2019 12:25:08</TimeStamp>
+        <ID>
+          <String>Ach018</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>cfT0lOvJGPQef8I9rlH9pa6evy0=30.04.2019 12:25:4730.04.2019 12:25:47</TimeStamp>
+        <ID>
+          <String>Ach018</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>GWH2d/jbkZc5OOlRmWxSXFEkW6Q=30.04.2019 12:42:2630.04.2019 12:37:51</TimeStamp>
+        <ID>
+          <String>DIM ARTGRP</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>1bo0TaP3yXSWtOgNtzEI45Hu84I=30.04.2019 13:05:5930.04.2019 12:42:26</TimeStamp>
+        <ID>
+          <String>DIM ARTIKEL</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>n6FU59yqSHhEPed17D53WX0yvA0=30.04.2019 12:56:5130.04.2019 12:55:07</TimeStamp>
+        <ID>
+          <String>DIM DATUM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>p/K7vwZsBxOMiMR9kOidPvO1voU=30.04.2019 13:11:2930.04.2019 13:10:58</TimeStamp>
+        <ID>
+          <String>DIM KUNDE</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>dNdsSr5ETz+DfIRxX+jvQThHXIk=30.04.2019 13:12:1530.04.2019 13:11:29</TimeStamp>
+        <ID>
+          <String>DIM VERKAEUFER</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>jHYywuQn4hSzjjV9+oBTtpnIrAM=30.04.2019 13:41:2930.04.2019 13:41:0514PI2Zpyi/kvR98KbrFYKych4qE=30.04.2019 13:41:0530.04.2019 13:41:05</TimeStamp>
+        <ID>
+          <String>Ach018</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>7gaVgQ2lZZ0KlihZngV0C9jt76g=30.04.2019 12:19:0630.04.2019 12:19:06</TimeStamp>
+      <ID>
+        <String>ach018</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2019-04-30T12:09:26.08Z</LastDeployed>
+</DeploymentSnapshot>

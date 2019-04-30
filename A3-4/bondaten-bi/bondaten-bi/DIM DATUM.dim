@@ -1,0 +1,185 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="89d9efbc-0501-492e-b70f-d0a7edb35fa7" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DIM DATUM</ID>
+  <Name>DIM DATUM</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3579" scrolltop="-9327" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="10848" y="21802" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DIM_DATUM" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3651" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000a0000430e00004d0c0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="ACH018_DIM_DATUM" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-3579</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-9327</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="c8e8ae90-6d6f-41cc-931c-25d1dc1d7804">
+    <DataSourceViewID>Ach018</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="6d71afbe-b002-490e-a28a-cc39953bad52">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="729925cc-bfae-4b77-a1f4-aaae4c0ea2e6">
+      <ID>DIM DATUM KEY</ID>
+      <Name>DIM DATUM KEY</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c0d02375-0975-4395-9c8c-c464b23b3ddd">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ae58d812-f8d6-451b-9f9a-8360a7d5de44">
+            <TableID>ACH018_DIM_DATUM</TableID>
+            <ColumnID>DIM_DATUM_KEY</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="34c43868-aeb2-47dd-9844-b5bc0d1ac58f">
+          <AttributeID>DATUM TAG</AttributeID>
+          <Name>DATUM TAG</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="02ba63db-b17e-4f32-9db6-b2a850036158">
+          <AttributeID>DATUM MONAT</AttributeID>
+          <Name>DATUM MONAT</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="834be5b9-7747-4982-a792-4dc9629c7fcd">
+          <AttributeID>DATUM JAHR</AttributeID>
+          <Name>DATUM JAHR</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="edc629ec-f1d3-40e7-9a48-f4662365815e">
+      <ID>DATUM TAG</ID>
+      <Name>DATUM TAG</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="197fe853-de77-48b2-94d8-b5bea535e83d">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4984a388-6b6a-4780-91af-141b41657c3b">
+            <TableID>ACH018_DIM_DATUM</TableID>
+            <ColumnID>DATUM_TAG</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d3114e9e-318d-4049-8d87-a0e124e67dd5">
+      <ID>DATUM MONAT</ID>
+      <Name>DATUM MONAT</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9a6c6c8e-c8d7-4642-bb14-ec2fe27c55f1">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="90998206-44d9-4189-bb7c-8687d390aa61">
+            <TableID>ACH018_DIM_DATUM</TableID>
+            <ColumnID>DATUM_MONAT</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="73f041fb-02d2-4e6c-8416-c25bd228db78">
+      <ID>DATUM JAHR</ID>
+      <Name>DATUM JAHR</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="60683a9d-ddc8-45eb-926e-c70188450138">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="07b14b24-b2a6-4434-8add-bee03aaf883a">
+            <TableID>ACH018_DIM_DATUM</TableID>
+            <ColumnID>DATUM_JAHR</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="74a70ceb-a26f-4b6e-8bbe-9fe8e82027e0">
+      <ID>Hierarchie</ID>
+      <Name>Hierarchie</Name>
+      <Levels>
+        <Level dwd:design-time-name="581b3935-fb48-4de6-bb5a-657a8122bc4b">
+          <ID>DATUM JAHR</ID>
+          <Name>DATUM JAHR</Name>
+          <SourceAttributeID>DATUM JAHR</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="e8651a93-b5f9-475a-990f-0ce486ffe7e1">
+          <ID>DATUM MONAT</ID>
+          <Name>DATUM MONAT</Name>
+          <SourceAttributeID>DATUM MONAT</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="415a3d54-c201-4e8d-a020-6fd4782a7011">
+          <ID>DATUM TAG</ID>
+          <Name>DATUM TAG</Name>
+          <SourceAttributeID>DATUM TAG</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

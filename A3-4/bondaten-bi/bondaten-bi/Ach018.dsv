@@ -1,0 +1,286 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="10c74e24-fc85-49e5-93f9-d34f7840bca8" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Ach018</ID>
+  <Name>Ach018</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Ach018</DataSourceID>
+  <Schema>
+    <xs:schema id="Ach018" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Ach018" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="ce95da3d-dc3c-4e00-be1c-9f1be1613907">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="ACH018_ARTIKEL" msprop:design-time-name="0c547b00-0348-4c5b-bcfd-2eece79d06c1" msprop:DbTableName="ARTIKEL" msprop:FriendlyName="ARTIKEL" msprop:DbSchemaName="ACH018" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ARTNR" msprop:design-time-name="9cdcbbc2-2f7f-4ec7-b79d-ade260d15724" msprop:DbColumnName="ARTNR" msprop:FriendlyName="ARTNR" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="ARTNAME" msprop:design-time-name="e2dbbf52-549c-4380-8d9d-c28805fa5b7f" msprop:DbColumnName="ARTNAME" msprop:FriendlyName="ARTNAME">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="30" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ARTGRP" msprop:design-time-name="87e0694f-0a38-469e-9460-04d69f889c44" msprop:DbColumnName="ARTGRP" msprop:FriendlyName="ARTGRP" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="GRPNAME" msprop:design-time-name="19dd2d53-466b-44da-9bc7-d3c562a0c1d5" msprop:DbColumnName="GRPNAME" msprop:FriendlyName="GRPNAME" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ACH018_DIM_ARTGRP" msprop:design-time-name="7d7bb1a0-49de-4f27-923a-862748149ffc" msprop:DbTableName="DIM_ARTGRP" msprop:FriendlyName="DIM_ARTGRP" msprop:DbSchemaName="ACH018" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DIM_ARTGRP_KEY" msprop:design-time-name="86172eff-eed6-444b-9d4b-0580f28f1e40" msprop:DbColumnName="DIM_ARTGRP_KEY" msprop:FriendlyName="DIM_ARTGRP_KEY" type="xs:decimal" />
+                  <xs:element name="ARTGRP" msprop:design-time-name="349ca319-3713-40eb-8f99-b03c77d358a2" msprop:DbColumnName="ARTGRP" msprop:FriendlyName="ARTGRP" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="GRPNAME" msprop:design-time-name="02695264-48e2-4f1c-b2e6-3968713603be" msprop:DbColumnName="GRPNAME" msprop:FriendlyName="GRPNAME" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ACH018_DIM_ARTIKEL" msprop:design-time-name="0406013a-1c83-4cf4-8b96-a296da8a701e" msprop:DbTableName="DIM_ARTIKEL" msprop:FriendlyName="DIM_ARTIKEL" msprop:DbSchemaName="ACH018" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DIM_ARTIKEL_KEY" msprop:design-time-name="0c0492be-5057-42bf-833b-24f9a38140b6" msprop:DbColumnName="DIM_ARTIKEL_KEY" msprop:FriendlyName="DIM_ARTIKEL_KEY" type="xs:decimal" />
+                  <xs:element name="ARTNR" msprop:design-time-name="5625a173-1902-442a-a41a-91ed4b724f62" msprop:DbColumnName="ARTNR" msprop:FriendlyName="ARTNR" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="ARTNAME" msprop:design-time-name="99b58c38-fbf9-4348-8989-36a5d1709b19" msprop:DbColumnName="ARTNAME" msprop:FriendlyName="ARTNAME" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ARTGRP" msprop:design-time-name="339fe800-24d3-412a-97f8-c26b14cb5591" msprop:DbColumnName="ARTGRP" msprop:FriendlyName="ARTGRP" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ACH018_DIM_DATUM" msprop:design-time-name="92335e6f-b98d-4013-997a-49f573aacc88" msprop:DbTableName="DIM_DATUM" msprop:FriendlyName="DIM_DATUM" msprop:DbSchemaName="ACH018" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DIM_DATUM_KEY" msprop:design-time-name="876aa9d5-e6a1-4227-9e2f-8dcb2f47fa57" msprop:DbColumnName="DIM_DATUM_KEY" msprop:FriendlyName="DIM_DATUM_KEY" type="xs:decimal" />
+                  <xs:element name="DATUM" msprop:design-time-name="62830999-50ec-4ddb-a71e-8008ae6f8ea6" msprop:DbColumnName="DATUM" msprop:FriendlyName="DATUM" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="DATUM_TAG" msprop:design-time-name="5c4f5f96-224b-4d37-a389-d2ffcbab11b0" msprop:DbColumnName="DATUM_TAG" msprop:FriendlyName="DATUM_TAG" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="DATUM_MONAT" msprop:design-time-name="ec11ef38-1746-4b2f-9126-daac6af396f2" msprop:DbColumnName="DATUM_MONAT" msprop:FriendlyName="DATUM_MONAT" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="DATUM_JAHR" msprop:design-time-name="957dea98-6d1d-4871-842a-612b2c2a341a" msprop:DbColumnName="DATUM_JAHR" msprop:FriendlyName="DATUM_JAHR" type="xs:decimal" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ACH018_DIM_KUNDE" msprop:design-time-name="36d95af4-cf6b-4526-8bee-6c7fa4d7bf43" msprop:DbTableName="DIM_KUNDE" msprop:FriendlyName="DIM_KUNDE" msprop:DbSchemaName="ACH018" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DIM_KUNDE_KEY" msprop:design-time-name="85103b0c-ebe7-426b-b90d-6773038af758" msprop:DbColumnName="DIM_KUNDE_KEY" msprop:FriendlyName="DIM_KUNDE_KEY" type="xs:decimal" />
+                  <xs:element name="KUNDENNUMMER" msprop:design-time-name="9823405a-d8d0-4b91-8ba8-7551991f2535" msprop:DbColumnName="KUNDENNUMMER" msprop:FriendlyName="KUNDENNUMMER" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="VORNAME" msprop:design-time-name="6ebc5ef6-2887-46c2-9eed-e112ecdbecec" msprop:DbColumnName="VORNAME" msprop:FriendlyName="VORNAME" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="NACHNAME" msprop:design-time-name="ab0affc3-53ef-4519-8b3e-ff6f5a0add4c" msprop:DbColumnName="NACHNAME" msprop:FriendlyName="NACHNAME" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ADRESSE" msprop:design-time-name="fd278ff8-5d2a-4639-8c78-19dcbb400e86" msprop:DbColumnName="ADRESSE" msprop:FriendlyName="ADRESSE" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PLZ" msprop:design-time-name="cfe74133-7d69-4b78-a8a1-8004b5db8cd5" msprop:DbColumnName="PLZ" msprop:FriendlyName="PLZ" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="5" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ORT" msprop:design-time-name="925d8508-f649-435a-9e18-b78cb0816f0a" msprop:DbColumnName="ORT" msprop:FriendlyName="ORT" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ACH018_DIM_VERKAEUFER" msprop:design-time-name="393de059-917b-49f3-acd0-ecc6b00e806f" msprop:DbTableName="DIM_VERKAEUFER" msprop:FriendlyName="DIM_VERKAEUFER" msprop:DbSchemaName="ACH018" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DIM_VERKAEUFER_KEY" msprop:design-time-name="0e558cfc-b4c6-421f-ba06-50b2e8cd784c" msprop:DbColumnName="DIM_VERKAEUFER_KEY" msprop:FriendlyName="DIM_VERKAEUFER_KEY" type="xs:decimal" />
+                  <xs:element name="VERKAEUFER_VORNAME" msprop:design-time-name="3f395bf5-33f5-43b0-a142-7966af691409" msprop:DbColumnName="VERKAEUFER_VORNAME" msprop:FriendlyName="VERKAEUFER_VORNAME" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="FILIALE_NAME" msprop:design-time-name="751b69c5-bea5-4623-867e-204148e52112" msprop:DbColumnName="FILIALE_NAME" msprop:FriendlyName="FILIALE_NAME" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="GEBURTSTAG" msprop:design-time-name="d016ae34-087a-49f5-b90e-12cfadbffc34" msprop:DbColumnName="GEBURTSTAG" msprop:FriendlyName="GEBURTSTAG" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="WOHNORT" msprop:design-time-name="37624ce3-6a89-4e92-ac7e-ed1e7feee8c0" msprop:DbColumnName="WOHNORT" msprop:FriendlyName="WOHNORT" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ACH018_FACT_BESTELLUNG" msprop:design-time-name="1a2f95cc-1ad5-4483-b4d6-83265698af15" msprop:DbTableName="FACT_BESTELLUNG" msprop:FriendlyName="FACT_BESTELLUNG" msprop:DbSchemaName="ACH018" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ANZAHL" msprop:design-time-name="9b9ae12f-ed3d-48c3-86b9-72781fccb9c4" msprop:DbColumnName="ANZAHL" msprop:FriendlyName="ANZAHL" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="PREIS" msprop:design-time-name="17bb3e1e-3f14-4662-9131-976de7dfa934" msprop:DbColumnName="PREIS" msprop:FriendlyName="PREIS" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="DIM_KUNDE_KEY" msprop:design-time-name="29f1808a-ccf4-4584-b174-201e066cb6e9" msprop:DbColumnName="DIM_KUNDE_KEY" msprop:FriendlyName="DIM_KUNDE_KEY" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="DIM_VERKAEUFER_KEY" msprop:design-time-name="0afe95b5-1330-4f4d-bec2-4e286e4e6f87" msprop:DbColumnName="DIM_VERKAEUFER_KEY" msprop:FriendlyName="DIM_VERKAEUFER_KEY" type="xs:decimal" />
+                  <xs:element name="DIM_ARTIKEL_KEY" msprop:design-time-name="e071fa1b-c41b-45a6-aa4d-74a1281ccafe" msprop:DbColumnName="DIM_ARTIKEL_KEY" msprop:FriendlyName="DIM_ARTIKEL_KEY" type="xs:decimal" />
+                  <xs:element name="DIM_ARTGRP_KEY" msprop:design-time-name="e5ebcd79-3182-46c0-b802-f7dbf3ac1a13" msprop:DbColumnName="DIM_ARTGRP_KEY" msprop:FriendlyName="DIM_ARTGRP_KEY" type="xs:decimal" />
+                  <xs:element name="DIM_DATUM_KEY" msprop:design-time-name="1623aadc-197e-4f8c-9e35-c5163388cccd" msprop:DbColumnName="DIM_DATUM_KEY" msprop:FriendlyName="DIM_DATUM_KEY" type="xs:decimal" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ACH018_TEMP_BESTELLUNG" msprop:design-time-name="73e62e6e-f080-40a3-977c-4536990f7a19" msprop:DbTableName="TEMP_BESTELLUNG" msprop:FriendlyName="TEMP_BESTELLUNG" msprop:DbSchemaName="ACH018" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="FILIALE_NAME" msprop:design-time-name="b4b81c27-f786-47bf-b8dd-dae7f3731c92" msprop:DbColumnName="FILIALE_NAME" msprop:FriendlyName="FILIALE_NAME" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DATUM" msprop:design-time-name="34811c04-7456-4799-b635-d667cb49fa45" msprop:DbColumnName="DATUM" msprop:FriendlyName="DATUM" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="ARTNR" msprop:design-time-name="2e4257df-7246-496e-9197-fc7437fef51b" msprop:DbColumnName="ARTNR" msprop:FriendlyName="ARTNR" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="ANZAHL" msprop:design-time-name="683a40f5-14eb-4fdf-b7d1-bbfd1b43c9ee" msprop:DbColumnName="ANZAHL" msprop:FriendlyName="ANZAHL" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="PREIS" msprop:design-time-name="c50932da-d3ab-4c68-85a6-3dfcd28ec306" msprop:DbColumnName="PREIS" msprop:FriendlyName="PREIS" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="VERKAEUFER_VORNAME" msprop:design-time-name="7b100233-4b5f-449a-8bfe-0047fe228fca" msprop:DbColumnName="VERKAEUFER_VORNAME" msprop:FriendlyName="VERKAEUFER_VORNAME" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="KUNDENNUMMER" msprop:design-time-name="2e6d5ee2-f721-4b32-82dc-5a97c9cce0e6" msprop:DbColumnName="KUNDENNUMMER" msprop:FriendlyName="KUNDENNUMMER" type="xs:decimal" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//ACH018_DIM_ARTGRP" />
+          <xs:field xpath="DIM_ARTGRP_KEY" />
+        </xs:unique>
+        <xs:unique name="ACH018_DIM_ARTIKEL_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//ACH018_DIM_ARTIKEL" />
+          <xs:field xpath="DIM_ARTIKEL_KEY" />
+        </xs:unique>
+        <xs:unique name="ACH018_DIM_DATUM_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//ACH018_DIM_DATUM" />
+          <xs:field xpath="DIM_DATUM_KEY" />
+        </xs:unique>
+        <xs:unique name="ACH018_DIM_KUNDE_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//ACH018_DIM_KUNDE" />
+          <xs:field xpath="DIM_KUNDE_KEY" />
+        </xs:unique>
+        <xs:unique name="ACH018_DIM_VERKAEUFER_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//ACH018_DIM_VERKAEUFER" />
+          <xs:field xpath="DIM_VERKAEUFER_KEY" />
+        </xs:unique>
+        <xs:keyref name="DIM_DATUM_FK" refer="ACH018_DIM_DATUM_Constraint1">
+          <xs:selector xpath=".//ACH018_FACT_BESTELLUNG" />
+          <xs:field xpath="DIM_DATUM_KEY" />
+        </xs:keyref>
+        <xs:keyref name="DIM_VERKAEUFER_FK" refer="ACH018_DIM_VERKAEUFER_Constraint1">
+          <xs:selector xpath=".//ACH018_FACT_BESTELLUNG" />
+          <xs:field xpath="DIM_VERKAEUFER_KEY" />
+        </xs:keyref>
+        <xs:keyref name="DIM_ARTIKEL_FK" refer="ACH018_DIM_ARTIKEL_Constraint1">
+          <xs:selector xpath=".//ACH018_FACT_BESTELLUNG" />
+          <xs:field xpath="DIM_ARTIKEL_KEY" />
+        </xs:keyref>
+        <xs:keyref name="DIM_ARTGRP_FK" refer="Constraint1">
+          <xs:selector xpath=".//ACH018_FACT_BESTELLUNG" />
+          <xs:field xpath="DIM_ARTGRP_KEY" />
+        </xs:keyref>
+        <xs:keyref name="DIM_KUNDE_FK" refer="ACH018_DIM_KUNDE_Constraint1">
+          <xs:selector xpath=".//ACH018_FACT_BESTELLUNG" />
+          <xs:field xpath="DIM_KUNDE_KEY" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <Ach018 xmlns="" />
+  </Schema>
+</DataSourceView>
