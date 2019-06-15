@@ -103,7 +103,7 @@ select artnr, artname, artgrp from gerken.artikel;
 insert into dim_artgrp (artgrp, grpname)
 select distinct artgrp, grpname from gerken.artikel;
 
--- populate dim_kunde, dim_verkauefer with GUI 
+-- populate dim_kunde, dim_verkaeufer with GUI 
 -- populate temp_bestellung with GUI
 
 --------------------------------------------- fix error in Bondatei.txt ------------------------------------------------------
