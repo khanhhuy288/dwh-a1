@@ -94,7 +94,7 @@ group by filiale_name, artgrp
 order by filiale_name, artgrp;
 
 -- Umsatz pro Kunden
-select kundennummer, sum(anzahl * preis) as umsatz from fact_bestellung
+select kundennummer, sum(anzahl * preis) umsatz from fact_bestellung
 full outer join dim_kunde using(dim_kunde_key) 
 group by kundennummer
 order by kundennummer;
@@ -105,6 +105,64 @@ left join dim_kunde using(dim_kunde_key)
 right join dim_datum using(dim_datum_key)
 group by kundennummer, datum
 order by kundennummer, datum;
+
+-- Einzigartige Kundennummer in Bondaten
+select kundennummer from fact_bestellung left join dim_kunde using(dim_kunde_key); 
+
+-- create Verkaufsdaten-View
+create view Verkaufsdaten as 
+select artname, kundennummer, anzahl, preis, anzahl * preis gesamtpreis from fact_bestellung 
+left join dim_artikel using (dim_artikel_key)
+left join dim_kunde using (dim_kunde_key)
+order by artname, kundennummer;
+
+select * from Verkaufsdaten;
+
+-- create Verkaufsdaten-View
+create view Verkaufsdaten as 
+select artname, kundennummer, anzahl, preis, anzahl * preis gesamtpreis from fact_bestellung 
+left join dim_artikel using (dim_artikel_key)
+left join dim_kunde using (dim_kunde_key)
+order by artname, kundennummer;
+
+select * from Verkaufsdaten;
+
+-- create Verkaufsdaten-Materialized-View
+create materialized view Verkaufsdaten_Materialized as 
+select artname, kundennummer, anzahl, preis, anzahl * preis gesamtpreis from fact_bestellung 
+left join dim_artikel using (dim_artikel_key)
+left join dim_kunde using (dim_kunde_key)
+order by artname, kundennummer;
+
+select * from Verkaufsdaten_Materialized;
+
+-- Mehr SQL-Anfragen
+-- Rangfolge der Umsätze der einzelnen Kunden in den einzelnen Monaten, Umsatz ud Prozentsatz am gesamten Monatumsatz
+select rank() over (order by sum(anzahl * preis) desc) rank, 
+to_char(datum, 'MM-YYYY') as monat_jahr, 
+kundennummer, sum(anzahl * preis) umsatz, 
+round(sum(anzahl * preis)/ cast(sum(sum(anzahl * preis)) over (partition by to_char(datum, 'MM-YYYY')) as float), 3) prozentsatz_monat
+from fact_bestellung 
+full outer join dim_datum using(dim_datum_key)
+left join dim_kunde using(dim_kunde_key)
+group by kundennummer, to_char(datum, 'MM-YYYY');
+
+-- Umsatzsumme pro Monat, Artikelgruppe 
+select to_char(datum, 'MM-YYYY') as monat_jahr, grpname, sum(anzahl * preis) umsatz
+from fact_bestellung 
+full outer join dim_datum using(dim_datum_key)
+left join dim_artgrp using(dim_artgrp_key)
+group by to_char(datum, 'MM-YYYY'), grpname
+order by to_char(datum, 'MM-YYYY'), grpname;
+
+-- Umsatzsumme pro Artikelgruppe, Monat
+select grpname, to_char(datum, 'MM-YYYY') as monat_jahr, sum(anzahl * preis) umsatz
+from fact_bestellung 
+full outer join dim_datum using(dim_datum_key)
+left join dim_artgrp using(dim_artgrp_key)
+group by to_char(datum, 'MM-YYYY'), grpname
+order by grpname, to_char(datum, 'MM-YYYY');
+
 
 
 
